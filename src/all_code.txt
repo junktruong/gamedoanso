@@ -1,0 +1,1242 @@
+--- File: src/all_code.txt ---
+
+
+--- File: src/app/globals.css ---
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.13 0.028 261.692);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.13 0.028 261.692);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.13 0.028 261.692);
+  --primary: oklch(0.21 0.034 264.665);
+  --primary-foreground: oklch(0.985 0.002 247.839);
+  --secondary: oklch(0.967 0.003 264.542);
+  --secondary-foreground: oklch(0.21 0.034 264.665);
+  --muted: oklch(0.967 0.003 264.542);
+  --muted-foreground: oklch(0.551 0.027 264.364);
+  --accent: oklch(0.967 0.003 264.542);
+  --accent-foreground: oklch(0.21 0.034 264.665);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.928 0.006 264.531);
+  --input: oklch(0.928 0.006 264.531);
+  --ring: oklch(0.707 0.022 261.325);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0.002 247.839);
+  --sidebar-foreground: oklch(0.13 0.028 261.692);
+  --sidebar-primary: oklch(0.21 0.034 264.665);
+  --sidebar-primary-foreground: oklch(0.985 0.002 247.839);
+  --sidebar-accent: oklch(0.967 0.003 264.542);
+  --sidebar-accent-foreground: oklch(0.21 0.034 264.665);
+  --sidebar-border: oklch(0.928 0.006 264.531);
+  --sidebar-ring: oklch(0.707 0.022 261.325);
+}
+
+.dark {
+  --background: oklch(0.13 0.028 261.692);
+  --foreground: oklch(0.985 0.002 247.839);
+  --card: oklch(0.21 0.034 264.665);
+  --card-foreground: oklch(0.985 0.002 247.839);
+  --popover: oklch(0.21 0.034 264.665);
+  --popover-foreground: oklch(0.985 0.002 247.839);
+  --primary: oklch(0.928 0.006 264.531);
+  --primary-foreground: oklch(0.21 0.034 264.665);
+  --secondary: oklch(0.278 0.033 256.848);
+  --secondary-foreground: oklch(0.985 0.002 247.839);
+  --muted: oklch(0.278 0.033 256.848);
+  --muted-foreground: oklch(0.707 0.022 261.325);
+  --accent: oklch(0.278 0.033 256.848);
+  --accent-foreground: oklch(0.985 0.002 247.839);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.21 0.034 264.665);
+  --sidebar-foreground: oklch(0.985 0.002 247.839);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0.002 247.839);
+  --sidebar-accent: oklch(0.278 0.033 256.848);
+  --sidebar-accent-foreground: oklch(0.985 0.002 247.839);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+--- File: src/app/layout.tsx ---
+// app/layout.tsx
+import "./globals.css";
+import type { Metadata } from "next";
+import { Providers } from "@src/components/providers";
+import { NavBar } from "@src/components/navbar";
+import { Toaster } from "@src/components/ui/toaster";
+import UserScoreListener from "@src/components/user-score-listener";
+import { useToast } from "@src/components/ui/use-toast";
+import ToastRenderer from "@src/components/toastRender";
+
+export const metadata: Metadata = {
+  title: "MyApp",
+  description: "Next.js + Prisma + Mongo + NextAuth + shadcn",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+
+  return (
+    <html lang="en" className="mdl-js">
+      <body className="bg-slate-50 min-h-screen">
+        <Providers>
+          <NavBar />
+
+          <UserScoreListener />
+          <main className="max-w-5xl mx-auto mt-6 px-4">{children}</main>
+          <Toaster />
+          <ToastRenderer />
+        </Providers>
+      </body>
+    </html>
+  );
+}
+
+
+--- File: src/app/page.tsx ---
+// app/page.tsx
+import { getServerSession } from "next-auth";
+import { authOptions } from "@src/lib/auth";
+
+export default async function HomePage() {
+  const session = await getServerSession(authOptions);
+
+  return (
+    <div className="space-y-4">
+      <h1 className="text-2xl font-bold">Trang chính</h1>
+      {session?.user ? (
+        <>
+          <p>
+            Xin chào <span className="font-semibold">{session.user.name}</span>!
+          </p>
+          <p>
+            Điểm hiện tại của bạn:{" "}
+            <span className="font-bold">{session.user.score}</span>
+          </p>
+        </>
+      ) : (
+        <p>Hãy đăng nhập để bắt đầu.</p>
+      )}
+    </div>
+  );
+}
+
+
+--- File: src/app/admin/admin-client.tsx ---
+"use client";
+
+import type { User } from "@prisma/client";
+import { useState } from "react";
+import { Button } from "@src/components/ui/button";
+
+interface AdminUser extends User {
+    setScore?: number;
+    add?: number;
+}
+
+interface Props {
+    initialUsers: User[];
+}
+
+export default function AdminClient({ initialUsers }: Props) {
+    const [users, setUsers] = useState<AdminUser[]>(initialUsers);
+    const [loadingId, setLoadingId] = useState<string | null>(null);
+
+    const handleSetScore = async (id: string, score: number) => {
+        setLoadingId(id);
+        try {
+            const res = await fetch("/api/admin/users/set", {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ id, score }),
+            });
+
+            if (!res.ok) throw new Error("Failed");
+
+            const updated = await res.json();
+            setUsers((prev) =>
+                prev.map((u) => (u.id === updated.id ? updated : u))
+            );
+        } catch (e) {
+            console.error(e);
+            alert("Set điểm thất bại");
+        } finally {
+            setLoadingId(null);
+        }
+    };
+
+    const handleAddScore = async (id: string, amount: number) => {
+        if (!amount) return;
+        setLoadingId(id);
+        try {
+            const res = await fetch("/api/admin/users/add", {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ id, amount }),
+            });
+
+            if (!res.ok) throw new Error("Failed");
+
+            const updated = await res.json();
+            setUsers((prev) =>
+                prev.map((u) =>
+                    u.id === updated.id ? { ...updated, add: 0 } : u
+                )
+            );
+        } catch (e) {
+            console.error(e);
+            alert("Cộng điểm thất bại");
+        } finally {
+            setLoadingId(null);
+        }
+    };
+
+    return (
+        <div className="space-y-4">
+            <h1 className="text-2xl font-bold">Admin – Quản lý người dùng</h1>
+            <table className="w-full text-sm border-collapse">
+                <thead>
+                    <tr className="border-b bg-slate-100">
+                        <th className="text-left p-2">Tên</th>
+                        <th className="text-left p-2">Email</th>
+                        <th className="text-left p-2">Role</th>
+                        <th className="text-left p-2">Điểm hiện tại</th>
+                        <th className="text-left p-2">Set điểm</th>
+                        <th className="text-left p-2">Cộng điểm</th>
+                        <th className="text-left p-2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {users.map((u) => (
+                        <tr key={u.id} className="border-b">
+                            <td className="p-2">{u.name}</td>
+                            <td className="p-2">{u.email}</td>
+                            <td className="p-2">{u.role}</td>
+                            <td className="p-2 font-semibold">{u.score}</td>
+                            <td className="p-2">
+                                <input
+                                    type="number"
+                                    className="border rounded px-2 py-1 w-24"
+                                    placeholder={`${u.score}`}
+                                    onChange={(e) => {
+                                        const value = parseInt(e.target.value || "0", 10);
+                                        setUsers((prev) =>
+                                            prev.map((x) =>
+                                                x.id === u.id ? { ...x, setScore: value } : x
+                                            )
+                                        );
+                                    }}
+                                />
+                            </td>
+                            <td className="p-2">
+                                <input
+                                    type="number"
+                                    className="border rounded px-2 py-1 w-24"
+                                    placeholder="0"
+                                    value={u.add ?? ""}
+                                    onChange={(e) => {
+                                        const value = parseInt(e.target.value || "0", 10);
+                                        setUsers((prev) =>
+                                            prev.map((x) =>
+                                                x.id === u.id ? { ...x, add: value } : x
+                                            )
+                                        );
+                                    }}
+                                />
+                            </td>
+                            <td className="p-2 space-x-2">
+                                <Button
+                                    size="sm"
+                                    disabled={loadingId === u.id}
+                                    onClick={() =>
+                                        handleSetScore(u.id, u.setScore ?? u.score)
+                                    }
+                                >
+                                    {loadingId === u.id ? "Đang lưu..." : "Lưu điểm"}
+                                </Button>
+                                <Button
+                                    size="sm"
+                                    variant="outline"
+                                    disabled={loadingId === u.id || !u.add}
+                                    onClick={() => handleAddScore(u.id, u.add ?? 0)}
+                                >
+                                    + Điểm
+                                </Button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    );
+}
+
+
+--- File: src/app/admin/page.tsx ---
+// app/admin/page.tsx
+import { getServerSession } from "next-auth";
+import { authOptions } from "@src/lib/auth";
+import { redirect } from "next/navigation";
+import { prisma } from "@src/lib/prisma";
+import AdminClient from "./admin-client";
+
+export default async function AdminPage() {
+    const session = await getServerSession(authOptions);
+
+    if (!session?.user || session.user.role !== "ADMIN") {
+        redirect("/");
+    }
+
+    const users = await prisma.user.findMany({
+        orderBy: { createdAt: "desc" },
+    });
+
+    // Chuyển sang client component để edit
+    return <AdminClient initialUsers={users} />;
+}
+
+
+--- File: src/app/api/admin/users/route.ts ---
+// app/api/admin/users/route.ts
+import { NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@src/lib/auth";
+import { prisma } from "@src/lib/prisma";
+
+export async function PATCH(req: Request) {
+    const session = await getServerSession(authOptions);
+    if (!session?.user || session.user.role !== "ADMIN") {
+        return new NextResponse("Forbidden", { status: 403 });
+    }
+
+    const { id, score } = await req.json();
+
+    if (!id || typeof score !== "number") {
+        return new NextResponse("Bad Request", { status: 400 });
+    }
+
+    const updated = await prisma.user.update({
+        where: { id },
+        data: { score },
+    });
+
+    return NextResponse.json(updated);
+}
+
+
+--- File: src/app/api/admin/users/add/route.ts ---
+import { prisma } from "@src/lib/prisma";
+import { NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@src/lib/auth";
+import { sseEmitter } from "@src/lib/sse";
+
+
+export async function PATCH(req: Request) {
+    const session = await getServerSession(authOptions);
+
+    if (!session?.user || session.user.role !== "ADMIN") {
+        return new NextResponse("Forbidden", { status: 403 });
+    }
+
+    const { id, amount } = await req.json();
+    if (!id || typeof amount !== "number")
+        return new NextResponse("Bad Request", { status: 400 });
+
+    const user = await prisma.user.findUnique({ where: { id } });
+    if (!user) return new NextResponse("User not found", { status: 404 });
+
+    const newScore = user.score + amount;
+
+    const updated = await prisma.user.update({
+        where: { id },
+        data: { score: newScore },
+    });
+
+    const message = `Bạn vừa được cộng +${amount} điểm!`;
+
+    await prisma.notification.create({
+        data: {
+            userId: id,
+            message,
+        },
+    });
+
+    // 🔥 Bắn realtime tới user
+    sseEmitter.emit("notify", {
+        userId: id,
+        message: `Bạn vừa được cộng +${amount} điểm!`,
+        newScore
+    });
+
+    return NextResponse.json(updated);
+}
+
+
+--- File: src/app/api/admin/users/set/route.ts ---
+// app/api/admin/users/set/route.ts
+import { prisma } from "@src/lib/prisma";
+import { NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@src/lib/auth";
+
+export async function PATCH(req: Request) {
+    const session = await getServerSession(authOptions);
+
+    if (!session?.user || session.user.role !== "ADMIN") {
+        return new NextResponse("Forbidden", { status: 403 });
+    }
+
+    const { id, score } = await req.json();
+
+    if (!id || typeof score !== "number") {
+        return new NextResponse("Bad Request", { status: 400 });
+    }
+
+    const updated = await prisma.user.update({
+        where: { id },
+        data: { score },
+    });
+
+    return NextResponse.json(updated);
+}
+
+
+--- File: src/app/api/auth/[...nextauth]/route.ts ---
+// app/api/auth/[...nextauth]/route.ts
+import NextAuth from "next-auth";
+import { authOptions } from "@src/lib/auth";
+
+const handler = NextAuth(authOptions);
+
+export { handler as GET, handler as POST };
+
+
+--- File: src/app/api/profile/route.ts ---
+// app/api/profile/route.ts
+import { NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@src/lib/auth";
+import { prisma } from "@src/lib/prisma";
+
+export async function PATCH(req: Request) {
+    const session = await getServerSession(authOptions);
+    if (!session?.user) {
+        return new NextResponse("Unauthorized", { status: 401 });
+    }
+
+    const { name, image } = await req.json();
+
+    const updated = await prisma.user.update({
+        where: { id: session.user.id },
+        data: {
+            name,
+            image,
+        },
+    });
+
+    return NextResponse.json(updated);
+}
+
+
+--- File: src/app/api/sse/route.ts ---
+import { sseEmitter } from "@src/lib/sse";
+
+export const runtime = "nodejs";
+
+export async function GET() {
+    const { readable, writable } = new TransformStream();
+    const writer = writable.getWriter();
+
+    const send = (obj: any) => {
+        const data = `data: ${JSON.stringify(obj)}\n\n`;
+        writer.write(new TextEncoder().encode(data));
+    };
+
+    send({ connected: true });
+
+    const onMessage = (data: any) => send(data);
+
+    sseEmitter.on("notify", onMessage);
+
+    // Cleanup khi client ngắt kết nối
+    const close = () => {
+        sseEmitter.off("notify", onMessage);
+        try { writer.close(); } catch { }
+    };
+
+    // Khi trình duyệt đóng kết nối
+    (readable as any).closed?.then(close).catch(close);
+
+    return new Response(readable, {
+        headers: {
+            "Content-Type": "text/event-stream",
+            "Cache-Control": "no-cache, no-transform",
+            Connection: "keep-alive",
+        },
+    });
+}
+
+
+--- File: src/app/history/page.tsx ---
+// app/history/page.tsx
+import { getServerSession } from "next-auth";
+import { authOptions } from "@src/lib/auth";
+import { redirect } from "next/navigation";
+import { prisma } from "@src/lib/prisma";
+
+export default async function HistoryPage() {
+    const session = await getServerSession(authOptions);
+    if (!session?.user) redirect("/");
+
+    const notifications = await prisma.notification.findMany({
+        where: { userId: session.user.id },
+        orderBy: { createdAt: "desc" },
+    });
+
+    return (
+        <div className="space-y-4">
+            <h1 className="text-2xl font-bold">Lịch sử điểm</h1>
+            {notifications.length === 0 ? (
+                <p>Chưa có lịch sử điểm nào.</p>
+            ) : (
+                <ul className="space-y-2">
+                    {notifications.map((n: any) => (
+                        <li
+                            key={n.id}
+                            className="border rounded px-3 py-2 bg-white flex justify-between"
+                        >
+                            <span className="text-sm">{n.message}</span>
+                            <span className="text-xs text-gray-500">
+                                {new Date(n.createdAt).toLocaleString()}
+                            </span>
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </div>
+    );
+}
+
+
+--- File: src/app/profile/page.tsx ---
+// app/profile/page.tsx
+import { getServerSession } from "next-auth";
+import { authOptions } from "@src/lib/auth";
+import { redirect } from "next/navigation";
+import ProfileClient from "./profile-client";
+import { prisma } from "@src/lib/prisma";
+
+export default async function ProfilePage() {
+    const session = await getServerSession(authOptions);
+    if (!session?.user) {
+        redirect("/");
+    }
+
+    const user = await prisma.user.findUnique({
+        where: { id: session.user.id },
+    });
+
+    if (!user) {
+        redirect("/");
+    }
+
+    return <ProfileClient user={user} />;
+}
+
+
+--- File: src/app/profile/profile-client.tsx ---
+// app/profile/profile-client.tsx
+"use client";
+
+import type { User } from "@prisma/client";
+
+import { useState } from "react";
+import { Button } from "@src/components/ui/button";
+
+interface Props {
+    user: User;
+}
+
+export default function ProfileClient({ user }: Props) {
+    const [name, setName] = useState(user.name ?? "");
+    const [image, setImage] = useState(user.image ?? "");
+    const [loading, setLoading] = useState(false);
+
+    const handleSave = async () => {
+        setLoading(true);
+        try {
+            const res = await fetch("/api/profile", {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, image }),
+            });
+
+            if (!res.ok) throw new Error("Failed");
+            alert("Cập nhật thành công! (F5 để thấy trên navbar)");
+        } catch (e) {
+            console.error(e);
+            alert("Cập nhật thất bại");
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return (
+        <div className="space-y-4 max-w-md">
+            <h1 className="text-2xl font-bold">Chỉnh sửa thông tin</h1>
+            <div className="space-y-2">
+                <label className="text-sm font-medium">Tên hiển thị</label>
+                <input
+                    className="w-full border rounded px-3 py-2 text-sm"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Nhập tên..."
+                />
+            </div>
+            <div className="space-y-2">
+                <label className="text-sm font-medium">Avatar URL</label>
+                <input
+                    className="w-full border rounded px-3 py-2 text-sm"
+                    value={image}
+                    onChange={(e) => setImage(e.target.value)}
+                    placeholder="https://..."
+                />
+            </div>
+            <Button onClick={handleSave} disabled={loading}>
+                {loading ? "Đang lưu..." : "Lưu"}
+            </Button>
+        </div>
+    );
+}
+
+
+--- File: src/components/navbar.tsx ---
+"use client";
+
+import { useSession, signIn, signOut } from "next-auth/react";
+import { Avatar, AvatarImage, AvatarFallback } from "@src/components/ui/avatar";
+import { Button } from "@src/components/ui/button";
+import Link from "next/link";
+
+export function NavBar() {
+  const { data: session, status } = useSession();
+  const loading = status === "loading";
+
+  return (
+    <nav className="px-6 py-4 bg-white border-b flex items-center justify-between">
+      <div className="flex items-center gap-4">
+        <Link href="/" className="text-xl font-semibold">MyApp</Link>
+
+        {session?.user?.role === "ADMIN" && (
+          <Link href="/admin" className="text-sm text-blue-600">Admin</Link>
+        )}
+        {session?.user && (
+          <Link href="/profile" className="text-sm text-gray-700">Profile</Link>
+        )}
+      </div>
+
+      {loading ? null : session?.user ? (
+        <div className="flex items-center gap-4">
+          <Link href="/history">Lịch sử điểm</Link>
+
+          <div className="flex flex-col text-right">
+            <span className="text-sm font-medium">
+              {session.user.name ?? "No name"}
+            </span>
+            <span className="text-xs text-gray-500">
+              Điểm: {session.user.score}
+            </span>
+          </div>
+
+          <Avatar>
+            <AvatarImage src={session.user.image ?? ""} />
+            <AvatarFallback>
+              {session.user.name?.[0]?.toUpperCase() ?? "U"}
+            </AvatarFallback>
+          </Avatar>
+
+          <Button variant="outline" size="sm" onClick={() => signOut()}>
+            Logout
+          </Button>
+        </div>
+      ) : (
+        <Button size="sm" onClick={() => signIn("google")}>
+          Đăng nhập
+        </Button>
+      )}
+    </nav>
+  );
+}
+
+
+--- File: src/components/notification-bell.tsx ---
+"use client";
+
+import Pusher from "pusher-js";
+import { useEffect, useState } from "react";
+// import { useSession } from "next-auth/react";
+import { Bell } from "lucide-react"; // nếu bạn dùng lucide, hoặc tự thay icon
+import { Button } from "@src/components/ui/button";
+import { useToast } from "@src/components/ui/use-toast";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@src/lib/auth";
+// import { getServerSession } from "next-auth";
+// import { authOptions } from "@src/lib/auth";
+
+interface RealtimePayload {
+    message: string;
+    amount: number;
+    newScore: number;
+}
+
+export function NotificationBell() {
+    const session = getServerSession(authOptions);
+    const { toast } = useToast();
+    const [unread, setUnread] = useState(0);
+
+    useEffect(() => {
+        // if (!session?.user?.id) return;
+
+        const pusher = new Pusher(process.env.NEXT_PUBLIC_PUSHER_KEY!, {
+            cluster: process.env.NEXT_PUBLIC_PUSHER_CLUSTER!,
+        });
+
+        const channelName = `user-${session.user.id}`;
+        const channel = pusher.subscribe(channelName);
+
+        channel.bind("score-added", (data: RealtimePayload) => {
+            setUnread((prev) => prev + 1);
+            toast({
+                title: "Bạn vừa được cộng điểm 🎉",
+                description: data.message,
+            });
+        });
+
+        return () => {
+            channel.unbind_all();
+            channel.unsubscribe();
+            pusher.disconnect();
+        };
+    }, [session?.user?.id, toast]);
+
+    if (!session?.user) return null;
+
+    return (
+        <Button
+            variant="ghost"
+            size="icon"
+            className="relative"
+            aria-label="Notifications"
+        >
+            <Bell className="w-5 h-5" />
+            {unread > 0 && (
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] rounded-full px-1">
+                    {unread}
+                </span>
+            )}
+        </Button>
+    );
+}
+
+
+--- File: src/components/providers.tsx ---
+// components/providers.tsx
+"use client";
+
+import React from "react";
+import { SessionProvider } from "next-auth/react";
+
+export function Providers({ children }: { children: React.ReactNode }) {
+    return <SessionProvider>{ children } </SessionProvider>;
+}
+
+
+--- File: src/components/toastRender.tsx ---
+"use client";
+
+import { useToast } from "@src/components/ui/use-toast";
+
+function ToastRenderer() {
+    const { ToastList } = useToast();
+    return <ToastList />;
+}
+
+export default ToastRenderer;
+
+
+--- File: src/components/user-score-listener.tsx ---
+"use client";
+
+import { useEffect } from "react";
+import { useSession } from "next-auth/react";
+import { useToast } from "@src/components/ui/use-toast";
+
+export default function UserScoreListener() {
+    const { data: session } = useSession();
+    const { toast } = useToast();
+
+    useEffect(() => {
+        if (!session?.user?.id) return;
+
+        const events = new EventSource("/api/sse");
+
+        events.onmessage = (event) => {
+            if (!event.data) return;
+
+            const data = JSON.parse(event.data);
+
+            if (data.userId === session.user.id) {
+                toast({
+                    title: "🎉 Bạn được cộng điểm!",
+                    description: data.message,
+                });
+            }
+        };
+
+
+        return () => {
+            events.close();
+        };
+    }, [session?.user?.id]);
+
+    return null;
+}
+
+
+--- File: src/components/ui/avatar.tsx ---
+"use client"
+
+import * as React from "react"
+import * as AvatarPrimitive from "@radix-ui/react-avatar"
+
+import { cn } from "@src/lib/utils"
+
+function Avatar({
+  className,
+  ...props
+}: React.ComponentProps<typeof AvatarPrimitive.Root>) {
+  return (
+    <AvatarPrimitive.Root
+      data-slot="avatar"
+      className={cn(
+        "relative flex size-8 shrink-0 overflow-hidden rounded-full",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function AvatarImage({
+  className,
+  ...props
+}: React.ComponentProps<typeof AvatarPrimitive.Image>) {
+  return (
+    <AvatarPrimitive.Image
+      data-slot="avatar-image"
+      className={cn("aspect-square size-full", className)}
+      {...props}
+    />
+  )
+}
+
+function AvatarFallback({
+  className,
+  ...props
+}: React.ComponentProps<typeof AvatarPrimitive.Fallback>) {
+  return (
+    <AvatarPrimitive.Fallback
+      data-slot="avatar-fallback"
+      className={cn(
+        "bg-muted flex size-full items-center justify-center rounded-full",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+export { Avatar, AvatarImage, AvatarFallback }
+
+
+--- File: src/components/ui/button.tsx ---
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@src/lib/utils"
+
+const buttonVariants = cva(
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        destructive:
+          "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+        outline:
+          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        ghost:
+          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "h-9 px-4 py-2 has-[>svg]:px-3",
+        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        icon: "size-9",
+        "icon-sm": "size-8",
+        "icon-lg": "size-10",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+)
+
+function Button({
+  className,
+  variant,
+  size,
+  asChild = false,
+  ...props
+}: React.ComponentProps<"button"> &
+  VariantProps<typeof buttonVariants> & {
+    asChild?: boolean
+  }) {
+  const Comp = asChild ? Slot : "button"
+
+  return (
+    <Comp
+      data-slot="button"
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props}
+    />
+  )
+}
+
+export { Button, buttonVariants }
+
+
+--- File: src/components/ui/toast.tsx ---
+"use client";
+
+import * as ToastPrimitive from "@radix-ui/react-toast";
+import { cn } from "@src/lib/utils";
+
+export const ToastProvider = ToastPrimitive.Provider;
+export const ToastViewport = ToastPrimitive.Viewport;
+
+interface ToastProps {
+    title: string;
+    description?: string;
+}
+
+export function Toast({ title, description }: ToastProps) {
+    return (
+        <ToastPrimitive.Root
+            className={cn(
+                "bg-white border p-4 rounded shadow-lg",
+                "data-[state=open]:animate-in data-[state=closed]:fade-out"
+            )}
+        >
+            <ToastPrimitive.Title className="font-semibold">{title}</ToastPrimitive.Title>
+            {description && (
+                <ToastPrimitive.Description className="text-sm text-gray-600">
+                    {description}
+                </ToastPrimitive.Description>
+            )}
+            <ToastPrimitive.Close
+                className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+                aria-label="Close"
+            >
+                ×
+            </ToastPrimitive.Close>
+        </ToastPrimitive.Root>
+    );
+}
+
+
+--- File: src/components/ui/toaster.tsx ---
+"use client";
+
+import { ToastProvider, ToastViewport } from "./toast";
+
+export function Toaster() {
+    return (
+        <ToastProvider swipeDirection="right">
+            <ToastViewport className="fixed top-0 right-0 z-50 mt-4 mr-4 flex flex-col gap-2" />
+        </ToastProvider>
+    );
+}
+
+
+--- File: src/components/ui/use-toast.tsx ---
+"use client";
+
+import * as React from "react";
+import * as ToastPrimitive from "@radix-ui/react-toast";
+import { Toast } from "./toast";
+
+let key = 0;
+
+export function useToast() {
+    const [toasts, setToasts] = React.useState<{ id: number; title: string; description?: string }[]>([]);
+
+    function toast({ title, description }: { title: string; description?: string }) {
+        const id = key++;
+        setToasts((prev) => [...prev, { id, title, description }]);
+        setTimeout(() => {
+            setToasts((prev) => prev.filter((t) => t.id !== id));
+        }, 4000);
+    }
+
+    const ToastList = () => (
+        <>
+            {
+                toasts.map((t) => (
+                    <ToastPrimitive.Provider key={t.id} >
+                        <Toast title={t.title} description={t.description} />
+                    </ToastPrimitive.Provider>
+                ))
+            }
+        </>
+    );
+
+    return { toast, ToastList };
+}
+
+
+--- File: src/lib/auth.ts ---
+// lib/auth.ts
+import { PrismaAdapter } from "@auth/prisma-adapter";
+import GoogleProvider from "next-auth/providers/google";
+import type { NextAuthOptions } from "next-auth";
+import { prisma } from "./prisma";
+import { Role } from "@prisma/client";
+
+export const authOptions: NextAuthOptions = {
+    adapter: PrismaAdapter(prisma) as any,
+
+    providers: [
+        GoogleProvider({
+            clientId: process.env.GOOGLE_CLIENT_ID!,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+        }),
+    ],
+
+    session: {
+        strategy: "jwt",
+    },
+
+    callbacks: {
+        async jwt({ token, user }) {
+            // Lần đầu login, user sẽ có dữ liệu
+            if (user) {
+                const dbUser = await prisma.user.findUnique({
+                    where: { email: user.email ?? undefined },
+                });
+
+                if (dbUser) {
+                    token.id = dbUser.id;
+                    token.role = dbUser.role;
+                    token.score = dbUser.score;
+                }
+            }
+            // Những lần sau
+            else if (token.email) {
+                const dbUser = await prisma.user.findUnique({
+                    where: { email: token.email as string },
+                });
+
+                if (dbUser) {
+                    token.id = dbUser.id;
+                    token.role = dbUser.role;
+                    token.score = dbUser.score;
+                }
+            }
+
+            return token;
+        },
+
+        async session({ session, token }) {
+            if (session.user && token) {
+                session.user.id = token.id as string;
+                session.user.role = token.role as Role;
+                session.user.score = token.score as number;
+            }
+            return session;
+        },
+    },
+
+    // ⭐ Chỉ chạy sau khi PrismaAdapter tạo user xong → an toàn 100%
+    events: {
+        async createUser({ user }) {
+            if (user.email && user.email === process.env.ADMIN_EMAIL) {
+                await prisma.user.update({
+                    where: { id: user.id },
+                    data: { role: "ADMIN" },
+                });
+            }
+        },
+    },
+
+    pages: {
+        // có thể custom sau
+    },
+};
+
+
+--- File: src/lib/prisma.ts ---
+// lib/prisma.ts
+import { PrismaClient } from "@prisma/client";
+
+const globalForPrisma = global as unknown as { prisma?: PrismaClient };
+
+export const prisma =
+    globalForPrisma.prisma ??
+    new PrismaClient({
+        log: ["error", "warn"],
+    });
+
+if (process.env.NODE_ENV !== "production") {
+    globalForPrisma.prisma = prisma;
+}
+
+
+--- File: src/lib/pusher.ts ---
+// lib/pusher.ts
+import Pusher from "pusher";
+
+export const pusherServer = new Pusher({
+    appId: process.env.PUSHER_APP_ID!,
+    key: process.env.PUSHER_KEY!,
+    secret: process.env.PUSHER_SECRET!,
+    cluster: process.env.PUSHER_CLUSTER!,
+    useTLS: process.env.PUSHER_USE_TLS === "true",
+});
+
+
+--- File: src/lib/sse.ts ---
+import { EventEmitter } from "events";
+
+export const sseEmitter = new EventEmitter();
+// tăng số listener tối đa
+sseEmitter.setMaxListeners(50);
+
+
+--- File: src/lib/utils.ts ---
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+
+
+--- File: src/types/next-auth.d.ts ---
+// types/next-auth.d.ts
+import NextAuth, { DefaultSession } from "next-auth";
+import { Role } from "@prisma/client";
+
+declare module "next-auth" {
+    interface Session {
+        user?: DefaultSession["user"] & {
+            id: string;
+            role: Role;
+            score: number;
+        };
+    }
+
+    interface User {
+        role: Role;
+        score: number;
+    }
+}
+
+declare module "next-auth/jwt" {
+    interface JWT {
+        id?: string;
+        role?: Role;
+        score?: number;
+    }
+}
+
+
