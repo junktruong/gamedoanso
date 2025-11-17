@@ -2,14 +2,10 @@
 
 import Pusher from "pusher-js";
 import { useEffect, useState } from "react";
-// import { useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { Bell } from "lucide-react"; // nếu bạn dùng lucide, hoặc tự thay icon
 import { Button } from "@src/components/ui/button";
 import { useToast } from "@src/components/ui/use-toast";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@src/lib/auth";
-// import { getServerSession } from "next-auth";
-// import { authOptions } from "@src/lib/auth";
 
 interface RealtimePayload {
     message: string;
@@ -18,12 +14,12 @@ interface RealtimePayload {
 }
 
 export function NotificationBell() {
-    const session = getServerSession(authOptions);
+    const { data: session } = useSession();
     const { toast } = useToast();
     const [unread, setUnread] = useState(0);
 
     useEffect(() => {
-        // if (!session?.user?.id) return;
+        if (!session?.user?.id) return;
 
         const pusher = new Pusher(process.env.NEXT_PUBLIC_PUSHER_KEY!, {
             cluster: process.env.NEXT_PUBLIC_PUSHER_CLUSTER!,
